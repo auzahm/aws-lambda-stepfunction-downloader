@@ -68,6 +68,7 @@ This repository helps you:
     **Example:**
 
     node downloadLambda.js arn:aws:lambda:us-east-1:123456789012:function:MyLambda
+    
     node downloadLambda.js us-east-1 ./lambdas
 
 3. **Standardize Environment & Package Files**
