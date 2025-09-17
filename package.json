@@ -1,0 +1,25 @@
+{
+  "name": "aws-lambda-stepfunction-downloader",
+  "version": "1.0.0",
+  "description": "Scripts to download AWS Lambda functions &amp; Step Function definitions for backup and version control.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auzahm/aws-lambda-stepfunction-downloader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/auzahm/aws-lambda-stepfunction-downloader/issues"
+  },
+  "homepage": "https://github.com/auzahm/aws-lambda-stepfunction-downloader#readme",
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.890.0",
+    "@aws-sdk/client-sfn": "^3.890.0",
+    "dotenv": "^17.2.2"
+  }
+}
