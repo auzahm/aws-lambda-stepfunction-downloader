@@ -37,7 +37,7 @@ This repository helps you:
 
 ## 🚀 Usage Examples
 
-## Download Lambdas from Step Function
+1. **Download Lambdas from Step Function**
 
 node download-stepfn-lambda.js <stepFunctionArn>
 
@@ -50,7 +50,7 @@ This will:
 - Download their ZIPs
 - Extract source code into `lambda-mods/<functionName>/`
 
-## Download a Single Lambda (or all Lambdas in region)
+2. **Download a Single Lambda (or all Lambdas in region)**
 
 node downloadLambda.js <FunctionNameOrRegion> [outputDir]
 
@@ -58,7 +58,7 @@ node downloadLambda.js <FunctionNameOrRegion> [outputDir]
 node downloadLambda.js arn:aws:lambda:us-east-1:123456789012:function:MyLambda
 node downloadLambda.js us-east-1 ./lambdas
 
-## Standardize Environment & Package Files
+3. **Standardize Environment & Package Files**
 
 node update-package-names.js
 
