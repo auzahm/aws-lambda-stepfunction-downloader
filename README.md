@@ -27,13 +27,17 @@ This repository helps you:
    **On Windows (PowerShell):**
 
    $env:AWS_ACCESS_KEY_ID="youraccesskey"
+
    $env:AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
+
    $env:AWS_REGION="your-region"
 
    **On Linux/Mac:**
 
    export AWS_ACCESS_KEY_ID="youraccesskey"
+
    export AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
+
    export AWS_REGION="your-region"
 
 4. **Setup .env files for Lambdas**
@@ -85,25 +89,41 @@ cp .env.example .env
 
 **Example `.env.example`:**
 
-AWS Credentials
+**AWS Credentials**
+
 MY_ACCESS_KEY=youraccesskey
+
 MY_SECRET_ACCESS_KEY=yoursecretaccesskey
+
 MY_REGION=us-east-1
 
-Database Settings
+
+**Database Settings**
+
 database=yourdatabase
+
 db_user=youruser
+
 db_pass=yourpass
+
 db_server=yourserverendpoint
+
 db_type=yourdbtype
+
 db_port=yourport
+
 db_max=10
+
 db_min=0
+
 db_idle=100000
+
 db_acquire=100000
 
-App Settings
+**App Settings**
+
 secret=yoursecret
+
 serverurl=yourserverurl
 
 ## 🌟 Example Workflow
