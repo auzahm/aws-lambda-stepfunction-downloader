@@ -31,6 +31,7 @@ aws-lambda-stepfunction-downloader/
    npm install
 
 3. **Configure AWS credentials (one-time)**
+
    **On Windows (PowerShell):**
    $env:AWS_ACCESS_KEY_ID="youraccesskey"
    $env:AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
