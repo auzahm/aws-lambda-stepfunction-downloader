@@ -24,26 +24,25 @@ aws-lambda-stepfunction-downloader/
 ## ⚙️ Setup
 
 1. **Clone this repo**
-git clone https://github.com/yourusername/aws-lambda-stepfunction-downloader.git
-cd aws-lambda-stepfunction-downloader
+   git clone https://github.com/yourusername/aws-lambda-stepfunction-downloader.git
+   cd aws-lambda-stepfunction-downloader
 
 2. **Install dependencies**
-npm install
+   npm install
 
 3. **Configure AWS credentials (one-time)**
+   **On Windows (PowerShell):**
+   $env:AWS_ACCESS_KEY_ID="youraccesskey"
+   $env:AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
+   $env:AWS_REGION="your-region"
 
-On Windows (PowerShell):
-$env:AWS_ACCESS_KEY_ID="youraccesskey"
-$env:AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
-$env:AWS_REGION="your-region"
-
-On Linux/Mac:
-export AWS_ACCESS_KEY_ID="youraccesskey"
-export AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
-export AWS_REGION="your-region"
+   **On Linux/Mac:**
+   export AWS_ACCESS_KEY_ID="youraccesskey"
+   export AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
+   export AWS_REGION="your-region"
 
 4. **Setup .env files for Lambdas**
-cp .env.example .env
+   cp .env.example .env
 
 ## 📥 Download Lambdas from Step Function
 
