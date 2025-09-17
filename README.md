@@ -43,9 +43,11 @@ This repository helps you:
 ## 🚀 Usage Examples
 
 1. **Download Lambdas from Step Function**
+
     node download-stepfn-lambda.js <stepFunctionArn>
 
     **Example:**
+
     node download-stepfn-lambda.js arn:aws:states:us-east-1:123456789012:stateMachine:MyStateMachine
 
     This will:
@@ -56,13 +58,16 @@ This repository helps you:
         - Extract source code into `lambda-mods/<functionName>/`
 
 2. **Download a Single Lambda (or all Lambdas in region)**
+
     node downloadLambda.js <FunctionNameOrRegion> [outputDir]
 
     **Example:**
+
     node downloadLambda.js arn:aws:lambda:us-east-1:123456789012:function:MyLambda
     node downloadLambda.js us-east-1 ./lambdas
 
 3. **Standardize Environment & Package Files**
+
     node update-package-names.js
 
     This will:
@@ -79,6 +84,7 @@ Each Lambda should have a `.env` file. Start by copying the example:
 cp .env.example .env
 
 **Example `.env.example`:**
+
 AWS Credentials
 MY_ACCESS_KEY=youraccesskey
 MY_SECRET_ACCESS_KEY=yoursecretaccesskey
