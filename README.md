@@ -38,35 +38,32 @@ This repository helps you:
 ## 🚀 Usage Examples
 
 1. **Download Lambdas from Step Function**
+    node download-stepfn-lambda.js <stepFunctionArn>
 
-node download-stepfn-lambda.js <stepFunctionArn>
+    **Example:**
+    node download-stepfn-lambda.js arn:aws:states:us-east-1:123456789012:stateMachine:MyStateMachine
 
-**Example:**
-node download-stepfn-lambda.js arn:aws:states:us-east-1:123456789012:stateMachine:MyStateMachine
-
-This will:
-- Fetch the state machine definition
-- Extract Lambda ARNs
-- Download their ZIPs
-- Extract source code into `lambda-mods/<functionName>/`
+    This will:
+        - Fetch the state machine definition
+        - Extract Lambda ARNs
+        - Download their ZIPs   
+        - Extract source code into `lambda-mods/<functionName>/`
 
 2. **Download a Single Lambda (or all Lambdas in region)**
+    node downloadLambda.js <FunctionNameOrRegion> [outputDir]
 
-node downloadLambda.js <FunctionNameOrRegion> [outputDir]
-
-**Example:**
-node downloadLambda.js arn:aws:lambda:us-east-1:123456789012:function:MyLambda
-node downloadLambda.js us-east-1 ./lambdas
+    **Example:**
+    node downloadLambda.js arn:aws:lambda:us-east-1:123456789012:function:MyLambda
+    node downloadLambda.js us-east-1 ./lambdas
 
 3. **Standardize Environment & Package Files**
+    node update-package-names.js
 
-node update-package-names.js
-
-This will:
-- Rename `package.json` `name` field to match folder name  
-- Generate `.env` and `.gitignore` inside each Lambda folder  
-- Add `dotenv` into code if missing
-- Replace `config.*` with `process.env.*`  
+    This will:
+        - Rename `package.json` `name` field to match folder name  
+        - Generate `.env` and `.gitignore` inside each Lambda folder  
+        - Add `dotenv` into code if missing
+        - Replace `config.*` with `process.env.*`  
 
 ## 📝 Environment Variables
 
