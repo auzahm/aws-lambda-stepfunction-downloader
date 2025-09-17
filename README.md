@@ -44,6 +44,7 @@ This repository helps you:
     node download-stepfn-lambda.js arn:aws:states:us-east-1:123456789012:stateMachine:MyStateMachine
 
     This will:
+
         - Fetch the state machine definition
         - Extract Lambda ARNs
         - Download their ZIPs   
@@ -60,6 +61,7 @@ This repository helps you:
     node update-package-names.js
 
     This will:
+    
         - Rename `package.json` `name` field to match folder name  
         - Generate `.env` and `.gitignore` inside each Lambda folder  
         - Add `dotenv` into code if missing
