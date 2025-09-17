@@ -35,7 +35,7 @@ This repository helps you:
 4. **Setup .env files for Lambdas**
    cp .env.example .env
 
-🚀 Usage Examples
+## 🚀 Usage Examples
 
 ## Download Lambdas from Step Function
 
