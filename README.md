@@ -23,11 +23,13 @@ This repository helps you:
 3. **Configure AWS credentials (one-time)**
 
    **On Windows (PowerShell):**
+
    $env:AWS_ACCESS_KEY_ID="youraccesskey"
    $env:AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
    $env:AWS_REGION="your-region"
 
    **On Linux/Mac:**
+   
    export AWS_ACCESS_KEY_ID="youraccesskey"
    export AWS_SECRET_ACCESS_KEY="yoursecretaccesskey"
    export AWS_REGION="your-region"
@@ -61,7 +63,7 @@ This repository helps you:
     node update-package-names.js
 
     This will:
-    
+
         - Rename `package.json` `name` field to match folder name  
         - Generate `.env` and `.gitignore` inside each Lambda folder  
         - Add `dotenv` into code if missing
