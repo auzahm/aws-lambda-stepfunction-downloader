@@ -5,21 +5,11 @@
 ![StepFunctions](https://img.shields.io/badge/AWS-Step_Functions-blue?logo=amazonaws)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-This repository provides utilities to **download AWS Lambda function code** from both **Step Functions state machines** and **individual Lambda ARNs**.  
-It also includes scripts to standardize package names, environment files, and prepare functions for local development.
+This repository helps you:
 
-## 📂 Project Structure
-
-aws-lambda-stepfunction-downloader/
-├── node_modules/
-├── .gitignore
-├── download-stepfn-lambda.js # Download Lambdas from Step Functions
-├── downloadLambda.js # Download a single Lambda
-├── package-lock.json
-├── package.json
-├── README.md
-├── update-package-names.js # Update package.json, .env, and .gitignore in each Lambda
-└── .env.example # Example environment variables
+- Download AWS Lambda functions (ZIP-based) from your account  
+- Extract Lambdas referenced in Step Function state machine definitions  
+- Standardize `.env`, `package.json`, and `.gitignore` for easier local development
 
 ## ⚙️ Setup
 
@@ -45,7 +35,9 @@ aws-lambda-stepfunction-downloader/
 4. **Setup .env files for Lambdas**
    cp .env.example .env
 
-## 📥 Download Lambdas from Step Function
+🚀 Usage Examples
+
+## Download Lambdas from Step Function
 
 node download-stepfn-lambda.js <stepFunctionArn>
 
@@ -58,23 +50,22 @@ This will:
 - Download their ZIPs
 - Extract source code into `lambda-mods/<functionName>/`
 
-## 📥 Download a Single Lambda
+## Download a Single Lambda (or all Lambdas in region)
 
-node downloadLambda.js <lambdaArn>
+node downloadLambda.js <FunctionNameOrRegion> [outputDir]
 
 **Example:**
 node downloadLambda.js arn:aws:lambda:us-east-1:123456789012:function:MyLambda
+node downloadLambda.js us-east-1 ./lambdas
 
-## 🛠️ Update Package Names & Environment Files
-
-Run this to standardize `package.json`, generate `.env`, update `.gitignore`, and install dotenv:
+## Standardize Environment & Package Files
 
 node update-package-names.js
 
-It will:
-- Rename `package.json` `name` field → folder name  
-- Create `.env` and `.gitignore`  
-- Inject `dotenv` into code  
+This will:
+- Rename `package.json` `name` field to match folder name  
+- Generate `.env` and `.gitignore` inside each Lambda folder  
+- Add `dotenv` into code if missing
 - Replace `config.*` with `process.env.*`  
 
 ## 📝 Environment Variables
@@ -105,26 +96,23 @@ App Settings
 secret=yoursecret
 serverurl=yourserverurl
 
-## ✅ Example Workflow
+## 🌟 Example Workflow
 
-1. Download Step Function Lambdas:
-node download-stepfn-lambda.js arn:aws:states:us-east-1:123456789012:stateMachine:MyStateMachine
+1. Set your AWS environment variables
+2. Run node download-stepfn-lambda.js <YourStepFunctionArn>
+3. Look for extracted lambdas inside lambda-mods/
+4. Copy .env.example to .env inside those folders
+5. Use update-package-names.js if needed
+6. Inspect code locally or version-control it
 
-2. Navigate into:
-lambda-mods/<functionName>/
+## ⚠️ Notes & Limitations
 
-3. Update `.env` file with correct values  
-
-4. Run/update code locally  
-
-## 📌 Notes
-
-- Works with both ZIP-based Lambdas and Step Functions  
-- Skips container image Lambdas (prints a note)  
+- This tool only works with ZIP-based Lambdas, not container image Lambdas 
+- Some Lambdas’ code may be built/deployed; output may not exactly match source
 - Great for auditing, debugging, and migrating Lambda code  
 - Do **not** commit `.env` files (already in `.gitignore`)  
 
 ## 👨‍💻 Author
 
 Developed by **Auzah Mansoor** ✨  
-Feel free to open issues or PRs to improve this project.
+Feedback and contributions are welcome!
